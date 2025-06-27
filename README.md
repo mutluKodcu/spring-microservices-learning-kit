@@ -43,3 +43,14 @@ It includes structured notes and real-world insights on:
 - `2-spring-framework.md` – Spring Core, Boot, Security, Actuator
 - `3-microservices.md` – Microservice Patterns, Kafka, Tracing, Configs
 - `4-general-software-principles.md` – SOLID, Clean Code, Async
+
+## 📚 References & Recommended Books
+
+This learning kit is inspired and supported by insights from the following industry-standard books:
+
+- **Effective Java (3rd Edition)** by Joshua Bloch
+- **Domain-Driven Design: Tackling Complexity in the Heart of Software** by Eric Evans
+- **Clean Architecture: A Craftsman's Guide to Software Structure and Design** by Robert C. Martin
+- **Microservices Patterns: With examples in Java** by Chris Richardson
+- **OCP Oracle Certified Professional Java SE 17 Developer Study Guide** by Scott Selikoff & Jeanne Boyarsky
+- **OCP Oracle Certified Professional Java SE 17 Developer Practice Tests** by Jeanne Boyarsky & Scott Selikoff
