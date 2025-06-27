@@ -46,8 +46,6 @@ It includes structured notes and real-world insights on:
 
 ## 📚 References & Recommended Books
 
-This learning kit is inspired and supported by insights from the following industry-standard books:
-
 - **Effective Java (3rd Edition)** by Joshua Bloch
 - **Domain-Driven Design: Tackling Complexity in the Heart of Software** by Eric Evans
 - **Clean Architecture: A Craftsman's Guide to Software Structure and Design** by Robert C. Martin
