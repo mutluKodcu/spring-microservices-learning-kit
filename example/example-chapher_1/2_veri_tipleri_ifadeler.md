@@ -10,12 +10,12 @@ double: 64 bit kayan noktalı sayı. Çift duyarlıklı (double precision) ondal
 - Detaylı Açıklama:
 Tamsayılar bellekte tam olarak saklanır ve kesin sonuç verir. Ondalıklı sayılar ise IEEE 754 standardına göre saklanır ve hesaplamada yuvarlama hataları olabilir.
 Float genelde daha az yer kaplar ama hassasiyeti düşüktür. Double, finans ve bilimsel hesaplamalarda tercih edilir.
-
+```
 int i = 1000;
 long l = 1_000_000_000_000L;
 float f = 3.14f;
 double d = 3.141592653589793;
-
+```
 - Proje Pratiği:
 Performans ve hafıza kısıtlaması varsa uygun tip seçilmeli. Özellikle finans ve bilimsel hesaplamalarda double ve BigDecimal tercih edilmeli.
 
@@ -37,9 +37,10 @@ char 16 bitlik bir primitif veri tipi olup tek bir Unicode karakterini tutar. Un
 
 - Detaylı Açıklama:
 Java char UTF-16 kodlama kullanır ve 0 ile 65535 arasındaki karakterleri tutar. Ancak Unicode'un tamamı 1 char ile temsil edilmez, bazı karakterler (örneğin emoji) iki char (surrogate pair) gerektirir.
-
+```
 char letter = 'A';
 char unicodeChar = '\u0041'; // Unicode escape sequence
+```
 - Proje Pratiği:
 Metin işleme ve uluslararasılaştırma projelerinde Unicode bilgisi kritiktir. String manipülasyonlarında surrogate pair ve kod noktaları dikkatle yönetilmelidir.
 
@@ -89,17 +90,16 @@ instanceof operatörü, bir nesnenin belirli bir sınıfın ya da onun alt sın�
 
 - Detaylı Açıklama:
 null referanslar için instanceof false döner. Sınıf hiyerarşisi içinde tür güvenliği sağlar. Java 14+ ile pattern matching özelliğiyle kullanımı kolaylaşmıştır.
-  
-<!-- if (obj instanceof String) {
+ ``` 
+ if (obj instanceof String) {
     String s = (String) obj;
     System.out.println(s.length());
 }
-Java 16+ örneği:
 
-  
 if (obj instanceof String s) {
     System.out.println(s.length());
-} -->
+}
+```
 - Proje Pratiği:
 Type checking gerekliyse ve polymorphism yeterli değilse kullanılır. Modern Java sürümlerinde pattern matching ile okunabilirlik artırılır.
 
@@ -113,8 +113,10 @@ BigDecimal: Kesin ondalık sayılar için kullanılır, özellikle finansal uygu
 - Detaylı Açıklama:
 Primitive ve wrapper tiplerin sınırlarını aşan sayısal işlemler için kullanılır. BigDecimal, kayan noktalı sayılar yerine kesin ondalık hesaplama sağlar ve yuvarlama modları sunar.
 
-<!-- BigInteger bigInt = new BigInteger("12345678901234567890");
-BigDecimal bigDec = new BigDecimal("12345.6789"); -->
+```
+BigInteger bigInt = new BigInteger("12345678901234567890");
+BigDecimal bigDec = new BigDecimal("12345.6789");
+```
 - Proje Pratiği:
 Finans, kriptografi ve bilimsel hesaplamalarda kesinlik ve büyük sayı gereksinimi varsa tercih edilir.
 
@@ -125,8 +127,10 @@ int primitif veri tipidir, bellekte doğrudan değer tutar; Integer ise int’in
 - Detaylı Açıklama:
 Integer nesne olduğu için null olabilir ve koleksiyonlarda kullanılabilir. int null alamaz ve daha performanslıdır. Autoboxing/unboxing ile dönüşümleri kolaylaştırılmıştır.
 
-<!-- int prim = 10;
-Integer wrap = 10; // autoboxing -->
+```
+int prim = 10;
+Integer wrap = 10; // autoboxing
+```
 
 - Proje Pratiği:
 Koleksiyonlarda Integer kullanılır. Performans kritik alanlarda int tercih edilir.
