@@ -1,4 +1,4 @@
-# Spring Microservices Learning Kit ***
+# Spring Microservices Learning Kit
 
 Threading, Concurrency, Locks, ExecutorService
 Collections, Stream API, Lambda expressions
