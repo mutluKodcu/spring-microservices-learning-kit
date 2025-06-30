@@ -1,11 +1,11 @@
 # Spring Microservices Learning Kit
 
+## Java & Java Core & Advanced
+
 Threading, Concurrency, Locks, ExecutorService
 Collections, Stream API, Lambda expressions
 Exception Handling, Immutability
 Design Patterns (Singleton, Factory, Builder, etc.)
-
-## Java & Java Core & Advanced
 
 ### Thread ve Concurrency
 
