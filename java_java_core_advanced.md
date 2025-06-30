@@ -1,25 +1,25 @@
-## 1. Java & Java Core & Advanced
+# 1. Java & Java Core & Advanced
 
-Threading, Concurrency, Locks, ExecutorService
-Collections, Stream API, Lambda expressions
-Exception Handling, Immutability
-Design Patterns (Singleton, Factory, Builder, etc.)
+- Threading, Concurrency, Locks, ExecutorService
+- Collections, Stream API, Lambda expressions
+- Exception Handling, Immutability
+ -Design Patterns (Singleton, Factory, Builder, etc.)
 
-### Thread ve Concurrency
+## Thread ve Concurrency
 
 Thread: Java'da bir programın aynı anda birden çok iş yapmasını sağlar.
 synchronized: Paylaşılan veriye erişim sırasında diğer threadlerin müdahalesini engeller.
 volatile: Tüm thread'ler tarafından güncel okunmayı sağlar.
 Locks: Daha esnek kilitleme (ReentrantLock, ReadWriteLock).
 
-### ExecutorService: Thread havuzu ile yönetim.
-#### ForkJoinPool: İşleri bölerek paralel çalıştırma.
+## ExecutorService: Thread havuzu ile yönetim.
+### ForkJoinPool: İşleri bölerek paralel çalıştırma.
 
-### Koleksiyonlar
-#### HashMap, ConcurrentHashMap, CopyOnWriteArrayList, WeakHashMap
+## Koleksiyonlar
+### HashMap, ConcurrentHashMap, CopyOnWriteArrayList, WeakHashMap
 
-## Design Patterns
-### Singleton, Builder, Decorator, Factory, Strategy
+# Design Patterns
+## Singleton, Builder, Decorator, Factory, Strategy
 
 ```
 | Pattern   | Gerçek Anlamı                                                 |
@@ -33,8 +33,8 @@ Locks: Daha esnek kilitleme (ReentrantLock, ReadWriteLock).
 ```
 
 ## Stream API & Lambda
-### Fonksiyonel programlama, map-filter-reduce
 
-#### Exception & Immutability
-#### try-catch, checked/unchecked
-#### Immutable objeler = thread-safe
+### Fonksiyonel programlama, map-filter-reduce
+### Exception & Immutability
+### try-catch, checked/unchecked
+### Immutable objeler = thread-safe
