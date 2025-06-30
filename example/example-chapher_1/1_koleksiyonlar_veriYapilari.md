@@ -12,7 +12,8 @@ TreeSet: Elemanları sıralı ve benzersiz tutar. Red-Black Tree veri yapısın�
 - Detaylı Açıklama:
 Kullanım amacına göre seçim yapılmalıdır. Eğer sıralı ve benzersiz elemanlar gerekiyorsa TreeSet, hızlı erişim ve sırasız benzersiz eleman gerekiyorsa HashSet, sıralı ve indeksli liste gerekiyorsa LinkedList ya da ArrayList tercih edilir. LinkedList özellikle insert/delete işlemlerinin sık olduğu durumlarda avantajlıdır.
 
-<!-- // LinkedList örneği
+```
+// LinkedList örneği
 LinkedList<String> linkedList = new LinkedList<>();
 linkedList.add("A");
 linkedList.addFirst("B"); // Başına ekleme hızlı
@@ -25,7 +26,8 @@ hashSet.add("B");
 // TreeSet örneği
 TreeSet<String> treeSet = new TreeSet<>();
 treeSet.add("B");
-treeSet.add("A"); // Otomatik sıralı -->
+treeSet.add("A"); // Otomatik sıralı
+```
 - Proje Pratiği:
 Veri yapısı seçimi, performans ve işlevsellik açısından kritik. Örneğin, kullanıcı aktif liste tutarken LinkedList, benzersiz yetenek seti için HashSet, sıralı raporlama için TreeSet kullanılır.
 
@@ -38,14 +40,15 @@ TreeMap: Kırmızı-siyah ağaç yapısı kullanır ve anahtarları doğal sıra
 
 - Detaylı Açıklama:
 HashMap hızlıdır ama sıralama gerektirmeyen durumlarda uygundur. TreeMap sıralı erişim gerektiren durumlarda kullanılır. Null anahtar HashMap’te desteklenir ancak TreeMap’te desteklenmez.
-
-<!-- HashMap<Integer, String> hashMap = new HashMap<>();
+```
+HashMap<Integer, String> hashMap = new HashMap<>();
 hashMap.put(2, "Two");
 hashMap.put(1, "One");
 
 TreeMap<Integer, String> treeMap = new TreeMap<>();
 treeMap.put(2, "Two");
-treeMap.put(1, "One"); // Sıralı tutar (1,2) -->
+treeMap.put(1, "One"); // Sıralı tutar (1,2)
+```
 
 - Proje Pratiği:
 Örneğin, önbellek uygulamalarında hızlı erişim için HashMap, raporlama ve sıralı arama için TreeMap kullanılır.
@@ -62,10 +65,12 @@ LinkedHashMap: HashMap performansına benzer, ancak ek olarak ekleme sırasını
 - Detaylı Açıklama:
 LinkedHashMap, önbellek implementasyonlarında (LRU cache) sıklıkla tercih edilir. TreeMap ise sıralı veri gerektiren durumlar için ideal. HashMap ise genel amaçlı ve performans odaklıdır.
 
-<!-- LinkedHashMap<Integer, String> linkedHashMap = new LinkedHashMap<>();
+```
+LinkedHashMap<Integer, String> linkedHashMap = new LinkedHashMap<>();
 linkedHashMap.put(3, "Three");
 linkedHashMap.put(1, "One");
-linkedHashMap.put(2, "Two"); // Iterasyon sırası 3,1,2 -->
+linkedHashMap.put(2, "Two"); // Iterasyon sırası 3,1,2
+```
 
 - Proje Pratiği:
 Sisteminizde iterasyon sırası önemli ise LinkedHashMap kullanın. Performans kritik ve sıralama gerekmiyorsa HashMap tercih edin. Sıralama ve range query ihtiyaçları için TreeMap uygundur.
@@ -77,7 +82,8 @@ hashCode() nesnenin bir sayısal temsilini döner ve hash tabanlı koleksiyonlar
 - Detaylı Açıklama:
 HashSet ve HashMap, hashCode() kullanarak nesnenin yerini belirler. Ancak farklı nesneler aynı hash kodunu üretebilir (collision). Bu durumda equals() metodu çağrılır. Eğer equals() false dönerse yeni nesne farklı kabul edilir. hashCode ve equals uyumlu olmalıdır; eşit nesneler aynı hash kodunu döndürmeli.
 
-<!-- class Person {
+```
+class Person {
     private int id;
     private String name;
     // Constructor, getter, setter
@@ -94,7 +100,8 @@ HashSet ve HashMap, hashCode() kullanarak nesnenin yerini belirler. Ancak farkl�
     public int hashCode() {
         return Objects.hash(id);
     }
-} -->
+}
+```
 - Proje Pratiği:
 Custom objelerin HashSet ya da HashMap içinde doğru çalışması için equals ve hashCode metotlarının düzgün override edilmesi zorunludur. Aksi halde veri kaybı ya da hatalı arama olur.
 
