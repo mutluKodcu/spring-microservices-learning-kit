@@ -31,12 +31,12 @@
             [Spring Framework & Boot]                                   [Microservice Architecture]
             |                                                           |
             | DI & Bean Lifecycle                                       | API Gateway & Service Discovery
-            | - Bean Scope (Singleton, Prototype)                      | Config Server
-            | - Lazy Initialization                                    | Circuit Breaker (Hystrix)
-            | - Qualifier                                             | Event-driven Architecture (Kafka)
+            | - Bean Scope (Singleton, Prototype)                       | Config Server
+            | - Lazy Initialization                                     | Circuit Breaker (Hystrix)
+            | - Qualifier                                               | Event-driven Architecture (Kafka)
             |                                                           | Distributed Tracing (Zipkin)
-            | Auto Configuration & Profiling                           | Design Patterns (Bulkhead, Sidecar)
-            | Transaction Management (@Transactional)                  | Rate Limiting & Security
+            | Auto Configuration & Profiling                            | Design Patterns (Bulkhead, Sidecar)
+            | Transaction Management (@Transactional)                   | Rate Limiting & Security
             | Spring Security (Auth, JWT, OAuth2, CSRF, Password)       |
             | Spring Actuator                                           |
             | Exception Handling (ControllerAdvice)                     |
