@@ -3,7 +3,7 @@
 - Threading, Concurrency, Locks, ExecutorService
 - Collections, Stream API, Lambda expressions
 - Exception Handling, Immutability
- -Design Patterns (Singleton, Factory, Builder, etc.)
+- Design Patterns (Singleton, Factory, Builder, etc.)
 
 ## Thread ve Concurrency
 
