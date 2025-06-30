@@ -15,7 +15,7 @@ Java’da overload ederken dikkat edilmesi gereken, metodların işlevlerinin an
 **Java 17+ Örnek:**
 
 
-<!-- public class Calculator {
+/* public class Calculator {
     public int add(int a, int b) {
         return a + b;
     }
@@ -27,7 +27,7 @@ Java’da overload ederken dikkat edilmesi gereken, metodların işlevlerinin an
     public int add(int a, int b, int c) {
         return a + b + c;
     }
-} -->
+} */
 - Proje Pratiği:
 
 Utility sınıflarda ve API tasarımında yaygın kullanılır. Örneğin String.format, Logger gibi sınıflarda farklı parametre kombinasyonları için overload metotlar bulunur. Kodun okunabilir ve bakımı kolay olması için metodların isim ve işlev tutarlılığına dikkat edilir.
