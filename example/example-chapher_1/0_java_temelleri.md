@@ -15,7 +15,8 @@ Java’da overload ederken dikkat edilmesi gereken, metodların işlevlerinin an
 **Java 17+ Örnek:**
 
 
-/* public class Calculator {
+```
+    public class Calculator {
     public int add(int a, int b) {
         return a + b;
     }
@@ -27,7 +28,8 @@ Java’da overload ederken dikkat edilmesi gereken, metodların işlevlerinin an
     public int add(int a, int b, int c) {
         return a + b + c;
     }
-} */
+}
+```
 - Proje Pratiği:
 
 Utility sınıflarda ve API tasarımında yaygın kullanılır. Örneğin String.format, Logger gibi sınıflarda farklı parametre kombinasyonları için overload metotlar bulunur. Kodun okunabilir ve bakımı kolay olması için metodların isim ve işlev tutarlılığına dikkat edilir.
@@ -42,7 +44,7 @@ Override, dinamik polimorfizmin temelidir. Üst sınıf referansı alt sınıf n
 Override edilen metodun imzası ve dönüş tipi üst sınıf ile aynı olmalıdır. @Override anotasyonu kullanmak derleyicinin hataları yakalaması açısından kritik.
 
 
-<!-- class Animal {
+``` class Animal {
     public void sound() {
         System.out.println("Animal makes a sound");
     }
@@ -53,7 +55,8 @@ class Dog extends Animal {
     public void sound() {
         System.out.println("Dog barks");
     }
-}  -->
+}
+```
 
 - Proje Pratiği:
 Frameworklerde callback ve event mekanizmalarında, servis katmanlarında yaygın. Örneğin Spring’in lifecycle callback metodları. Ayrıca template pattern gibi design patternlerde temel yapı. Override edilen metodlar üst sınıf kontratına uygun davranmalıdır.
@@ -67,8 +70,8 @@ Kalıtım “is-a” ilişkisini sağlar. Örneğin Araba bir Taşıttır. Java�
 
 Kalıtımda super ile üst sınıf üyelerine erişilir. Override ile davranış değiştirilebilir.
 
-
-<!-- class Vehicle {
+```
+class Vehicle {
     public void start() {
         System.out.println("Vehicle started");
     }
@@ -78,7 +81,8 @@ class Car extends Vehicle {
     public void openTrunk() {
         System.out.println("Trunk opened");
     }
-} -->
+}
+```
 
 - Proje Pratiği:
 Domain modellemede kullanılır. Ancak servis katmanında interface ve kompozisyon daha çok tercih edilir. Hibernate gibi ORM araçlarında inheritance stratejileri (single table, joined table) performans ve sorgu açısından önemlidir.
@@ -107,11 +111,13 @@ Servisler, frameworkler genelde üst sınıf veya interface tiplerinde parametre
 - Detaylı Açıklama:
 Downcasting risklidir; önce instanceof ile nesnenin uygun sınıfa ait olup olmadığı kontrol edilmelidir. Alt sınıfa özgü metodlara erişmek için kullanılır.
 
-<!-- Animal animal = new Dog();
+```
+Animal animal = new Dog();
 if (animal instanceof Dog) {
     Dog dog = (Dog) animal; // Downcasting
     dog.bark();
-} -->
+}
+```
 - Proje Pratiği:
 İyi tasarımlarda downcasting minimize edilir, interface ve polymorphism tercih edilir. Ancak frameworklerde veya legacy kodlarda gerekebilir.
 
@@ -123,7 +129,7 @@ Polimorfizm, aynı isimde farklı davranışlara sahip metodların çalışabilm
 Runtime polimorfizm, üst sınıf referansının alt sınıf nesnesini tutup metod çağırmasıdır. Bu, dinamik davranış değişimini sağlar. Overloading ise metodların parametre imzalarına göre derleyici tarafından seçilmesidir.
 
 
-<!-- class Animal {
+``` class Animal {
     public void sound() {
         System.out.println("Animal sound");
     }
@@ -141,7 +147,8 @@ public class Main {
         Animal animal = new Dog();
         animal.sound(); // Dog barks
     }
-} -->
+}
+```
 - Proje Pratiği:
 Servis mimarilerinde esneklik sağlar. Interface ve abstract class tasarımlarının temelidir. Spring gibi frameworklerde bean yönetiminde ve proxy oluşturulmasında kullanılır.
 
@@ -153,11 +160,13 @@ static anahtar kelimesi, sınıfa ait (instance değil) üyeleri belirtir. Stati
 Static üyeler, nesne oluşturulmadan erişilebilir. Static metodlar instance değişkenlerine doğrudan erişemez. Utility metotlar ve ortak veri için kullanılır. static bloklar sınıf yüklendiğinde bir kere çalışır.
 
 
-<!-- public class Utils {
+```
+ public class Utils {
     public static int square(int x) {
         return x * x;
     }
-} -->
+}
+```
 
 int result = Utils.square(5);
 - Proje Pratiği:
@@ -170,9 +179,10 @@ final anahtar kelimesi değiştirilemeyen sabitler, override edilemeyen metodlar
 - Detaylı Açıklama:
 Final değişken atandıktan sonra değiştirilemez. Final metodlar override edilemez. Final sınıflar extend edilemez. Immutable sınıflar oluştururken final kullanımı yaygındır.
 
-<!-- public final class Constants {
+```  public final class Constants {
     public static final double PI = 3.1415;
-} -->
+}
+```
 - Proje Pratiği:
 Immutable nesneler yaratmak, API stabilitesi sağlamak ve kod güvenliği için kullanılır. Özellikle thread-safe yapıların temelidir.
 
@@ -182,7 +192,7 @@ this içinde bulunduğunuz nesneyi, super ise üst sınıf nesnesini ifade eder.
 
 - Detaylı Açıklama:
 this overload metodları veya yapıcıları çağırmak için kullanılırken, super override edilen metodları veya üst sınıf yapıcılarını çağırır. super olmadan override edilen metodlara erişilemez.
-<!-- 
+```
 class Animal {
     void sound() {
         System.out.println("Animal sound");
@@ -194,7 +204,8 @@ class Dog extends Animal {
         super.sound();
         System.out.println("Dog barks");
     }
-} -->
+}
+```
 - Proje Pratiği:
 Kalıtımda davranış genişletirken kullanılır. Yapıcı zincirlemelerinde ve metot override’da önemli.
 
@@ -237,7 +248,7 @@ equals() nesnelerin eşitliğini tanımlar, hashCode() ise nesnenin hash kodunu 
 Hash tabanlı koleksiyonlarda (HashMap, HashSet) hashCode() nesnenin konumunu belirler, equals() ise eşitlik kontrolünü yapar. Eğer iki nesne equals() ile eşitse, hashCode() değerleri de aynı olmalıdır. Aksi halde koleksiyonların davranışı bozulur.
 
 Java 17+ Örnek:
-
+```
 @Override
 public boolean equals(Object o) {
     if (this == o) return true;
@@ -245,7 +256,7 @@ public boolean equals(Object o) {
     Person p = (Person) o;
     return id == p.id;
 }
-
+```
 @Override
 public int hashCode() {
     return Objects.hash(id);
@@ -274,13 +285,17 @@ Java’da tüm parametreler pass-by-value (değer ile) geçirilir. Ancak nesne r
 Primitive tipler doğrudan değer olarak kopyalanır. Nesne tiplerinde ise referansın kopyası metotlara iletilir. Bu nedenle metodun içinde nesnenin içeriği değiştirilebilir ama referansın kendisi değiştirilemez.
 
 
-<!-- public void changeValue(int a) {
+```
+public void changeValue(int a) {
     a = 5; // Orijinal değişken etkilenmez
 }
 
 public void changeObject(Person p) {
     p.setName("New Name"); // Nesne içeriği değişir
-} -->
+}
+
+```
+
 - Proje Pratiği:
 Referans tipi değişkenlerde değişiklik yaparken yan etkiler olabileceği için dikkat gerekir. Immutable objeler kullanmak yan etkileri engeller.
 
@@ -291,11 +306,13 @@ Encapsulation, veri ve metodların tek bir sınıf içinde toplanması ve verile
 - Detaylı Açıklama:
 Veri gizliliği için alanlar private yapılır, public getter/setter metodlarıyla kontrollü erişim sağlanır. Böylece nesne durumu dış müdahalelerden korunur ve kontrollü yönetilir.
 
-<!-- public class Person {
+```
+ public class Person {
     private String name;
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-} -->
+}
+```
 - Proje Pratiği:
 Encapsulation, nesne yönelimli tasarımın temelidir. Kodun sürdürülebilirliği ve güvenliği için önemlidir. Spring Bean’lerde de kapsülleme standarttır.
 
@@ -316,7 +333,8 @@ Küçük hesaplamalarda basit ve okunaklı çözümler tercih edilir. Stream API
 
 ## Stream API kullanmadan, sadece temel if-else yapısıyla üç değerden en büyüğünü bulmak için basit ve anlaşılır bir yöntem şöyle olur:
 
-<!-- int max(int a, int b, int c) {
+```
+ int max(int a, int b, int c) {
     int max = a;
     if (b > max) {
         max = b;
@@ -325,7 +343,8 @@ Küçük hesaplamalarda basit ve okunaklı çözümler tercih edilir. Stream API
         max = c;
     }
     return max;
-} -->
+}
+```
 Açıklama:
 
 İlk önce a'yı maksimum kabul ediyoruz.
