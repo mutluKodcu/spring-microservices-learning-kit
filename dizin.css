@@ -1,0 +1,51 @@
+[Java Core]-------------------------+
+|                                 |
+| Thread & Concurrency            |<-------------------+
+|  - Thread                       |                    |
+|  - synchronized                 |                    |
+|  - volatile                     |                    |
+|  - Locks (ReentrantLock)        |                    |
+|  - ExecutorService              |                    |
+|  - ForkJoinPool                 |                    |
+|                                 |                    |
+| Collections                     |                    |
+|  - HashMap                      |                    |
+|  - ConcurrentHashMap            |                    |
+|  - CopyOnWriteArrayList         |                    |
+|  - WeakHashMap                  |                    |
+|                                 |                    |
+| Design Patterns                 |                    |
+|  - Singleton                    |                    |
+|  - Builder                      |                    |
+|  - Factory                      |                    |
+|  - Decorator                    |                    |
+|  - Strategy                     |                    |
+|                                 |                    |
+| Stream API & Lambda             |                    |
+| Exception Handling              |                    |
+| Immutability                    |                    |
++-----------------------------+------------------------|
+                                                   |
+                   +-------------------------------+---------------------------+
+                   |                                                           |
+            [Spring Framework & Boot]                                   [Microservice Architecture]
+            |                                                           |
+            | DI & Bean Lifecycle                                       | API Gateway & Service Discovery
+            | - Bean Scope (Singleton, Prototype)                      | Config Server
+            | - Lazy Initialization                                    | Circuit Breaker (Hystrix)
+            | - Qualifier                                             | Event-driven Architecture (Kafka)
+            |                                                           | Distributed Tracing (Zipkin)
+            | Auto Configuration & Profiling                           | Design Patterns (Bulkhead, Sidecar)
+            | Transaction Management (@Transactional)                  | Rate Limiting & Security
+            | Spring Security (Auth, JWT, OAuth2, CSRF, Password)       |
+            | Spring Actuator                                           |
+            | Exception Handling (ControllerAdvice)                     |
+            +-----------------------------------------------------------+
+                                             |
+                                       [Genel Yazılım Mühendisliği]
+                                       | SOLID Prensipleri
+                                       | Clean Code & Testability
+                                       | Exception Handling Stratejileri
+                                       | Immutable Object Usage
+                                       | Asenkron Programlama (CompletableFuture)
+                                       +-----------------------------+
