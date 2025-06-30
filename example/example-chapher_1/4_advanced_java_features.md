@@ -23,11 +23,12 @@ Reflection API, çalışma zamanında (runtime) sınıfların, metodların, alan
 - Detaylı Açıklama:
 Reflection ile private metodlara erişmek, dinamik nesne oluşturmak, annotation okumak mümkün. Ancak performans ve güvenlik açısından dikkatle kullanılmalı.
  
-<!-- Class<?> clazz = Class.forName("com.example.Person");
+``` Class<?> clazz = Class.forName("com.example.Person");
 Method method = clazz.getDeclaredMethod("getName");
 method.setAccessible(true);
 Object result = method.invoke(clazz.getConstructor().newInstance());
-System.out.println(result); -->
+System.out.println(result);
+```
 - Proje Pratiği:
 Framework ve kütüphanelerde (Spring, Hibernate) sık kullanılır. Uygulama kodunda ise zorunlu olmadıkça tercih edilmez.
 
@@ -38,8 +39,9 @@ Lambda ifadeleri, fonksiyonel programlamaya izin veren, kısa ve anonim fonksiyo
 - Detaylı Açıklama:
 Kodun okunabilirliğini artırır, anonim sınıflara göre daha az kod yazılır. Fonksiyonları parametre olarak verebilmek mümkün olur. Paralel ve fonksiyonel yapıların temelidir.
  
-<!-- List<String> list = List.of("a", "b", "c");
-list.forEach(s -> System.out.println(s.toUpperCase())); -->
+``` List<String> list = List.of("a", "b", "c");
+list.forEach(s -> System.out.println(s.toUpperCase()));
+```
 - Proje Pratiği:
 Koleksiyon işlemlerinde, event callbacklerinde ve Stream API ile beraber yaygın kullanılır.
 
@@ -50,11 +52,12 @@ Interface’lerde gövdeli metodlar (default methods) Java 8 ile geldi. Interfac
 - Detaylı Açıklama:
 Default metodlar geriye dönük uyumluluk sağlar, interface genişletilebilir. Ayrıca interface içinde ortak fonksiyonellik sağlamak için kullanılır.
  
-<!-- interface MyInterface {
+``` interface MyInterface {
     default void defaultMethod() {
         System.out.println("Default method çalıştı");
     }
-} -->
+} 
+```
 - Proje Pratiği:
 API’lerde ve framework geliştirmede interface değişikliklerini kolaylaştırmak için kullanılır.
 
@@ -88,14 +91,15 @@ try-catch blokları hata yönetimi için kullanılır; try içinde kod yazılır
 - Detaylı Açıklama:
 throws method signature’da exception bildirir, çağıran methodda handle edilmelidir. try-catch ise doğrudan hatayı yakalar ve yönetir.
  
-<!-- public void readFile() throws IOException {
+``` public void readFile() throws IOException {
     // throws bildirimi
     try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
         System.out.println(br.readLine());
     } catch (IOException e) {
         e.printStackTrace();
     }
-} -->
+} 
+```
 - Proje Pratiği:
 Hata yönetimi temiz ve kontrollü olmalı, gereksiz catch blokları kod karmaşasına neden olur.
 
@@ -106,11 +110,13 @@ Hata yönetimi temiz ve kontrollü olmalı, gereksiz catch blokları kod karmaş
 - Detaylı Açıklama:
 Exception veya RuntimeException sınıflarından extend edilir. Anlamlı mesaj ve ek alanlar eklenebilir.
  
-<!-- public class InvalidUserException extends Exception {
+```
+public class InvalidUserException extends Exception {
     public InvalidUserException(String message) {
         super(message);
     }
-} -->
+} 
+```
 - Proje Pratiği:
 Domain hataları, iş kuralı ihlalleri için custom exception kullanmak kodun anlaşılabilirliğini artırır.
 
@@ -138,13 +144,15 @@ File: Eski API, dosya/dizin varlığı kontrol, oluşturma.
 Path: Daha modern, daha fazla özellik ve platform bağımsızlığı.
 
 Files: Dosya kopyalama, okuma, yazma gibi statik yardımcı metotlar içerir.
-<!--  
+```
 Path path = Paths.get("example.txt");
 if (!Files.exists(path)) {
     Files.createFile(path);
 }
 String content = "Merhaba Dünya";
-Files.writeString(path, content); -->
+Files.writeString(path, content); 
+```
+
 - Proje Pratiği:
 Java 7 sonrası Path ve Files tercih edilir; daha güvenli ve esnek API sunar.
 
