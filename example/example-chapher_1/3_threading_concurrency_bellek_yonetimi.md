@@ -7,7 +7,7 @@ Java’da multithreading, birden fazla iş parçacığının (thread) aynı anda
 - Detaylı Açıklama:
 Thread yaratmak için Thread sınıfını extend etmek veya Runnable interface’ini implement etmek gerekir. Paylaşılan verilere erişim sırasında synchronized anahtar kelimesi veya Lock mekanizmaları kullanılır. Bu sayede yarış koşulları (race condition) ve tutarsızlık engellenir.
 
-<!-- class Counter {
+``` class Counter {
     private int count = 0;
 
     public synchronized void increment() {
@@ -34,7 +34,8 @@ public class Main {
         t2.join();
         System.out.println("Count: " + counter.getCount()); // Beklenen 2000
     }
-} -->
+}
+```
 - Proje Pratiği:
 Concurrency hatalarını önlemek için senkronizasyon çok kritik. Ancak aşırı senkronizasyon performans sorunlarına yol açabilir, bu yüzden ihtiyaç kadar kullanılmalı.
 
@@ -48,7 +49,7 @@ Lock kilidi manuel açıp kapatmayı gerektirir (lock() ve unlock()).
 Lock ile zaman aşımı ve kesintiye duyarlı kilitleme (tryLock) gibi gelişmiş özellikler kullanılabilir.
 synchronized otomatik olarak blok bitince kilidi bırakır.
 Lock daha kontrollüdür, deadlock önleme ve performans için avantaj sağlar.
-
+```
 Lock lock = new ReentrantLock();
 
 lock.lock();
@@ -57,6 +58,7 @@ try {
 } finally {
     lock.unlock();
 }
+```
 - Proje Pratiği:
 Performans kritik ve karmaşık senkronizasyonlarda Lock tercih edilir. Basit durumlarda synchronized yeterlidir.
 
@@ -95,9 +97,12 @@ ExecutorService, Java’nın thread yönetimini soyutlayan ve iş parçacığı 
 - Detaylı Açıklama:
 Doğrudan Thread oluşturmak yerine, görevleri ExecutorServicee vererek performanslı, yönetilebilir ve ölçeklenebilir concurrency sağlanır. Thread havuzu sayesinde thread yaratma maliyetleri azalır.
 
-<!-- ExecutorService executor = Executors.newFixedThreadPool(5);
+```
+ExecutorService executor = Executors.newFixedThreadPool(5);
 executor.submit(() -> System.out.println("Task çalışıyor"));
-executor.shutdown(); -->
+executor.shutdown();
+```
+
 - Proje Pratiği:
 Yüksek performanslı uygulamalarda thread havuzu mutlaka kullanılmalı. Özellikle web sunucuları, mikroservisler ve batch işlemlerde tercih edilir.
 
@@ -112,10 +117,12 @@ Connection Pool Örneği:
 
 Spring Boot’ta HikariCP gibi popüler pool kullanılır:
 
-<!-- spring.datasource.hikari.maximum-pool-size=10
+```
+spring.datasource.hikari.maximum-pool-size=10
 spring.datasource.url=jdbc:mysql://localhost:3306/mydb
 spring.datasource.username=user
-spring.datasource.password=pass -->
+spring.datasource.password=pass
+```
 
 - Proje Pratiği:
 Performans ve kaynak yönetimi için connection pool kullanımı zorunludur. Ayrıca thread-safe havuzların doğru yönetilmesi gerekir.
@@ -129,9 +136,10 @@ GC reachability analiz yapar; erişilemeyen nesneler toplanır.
 WeakReference: Nesnenin sadece weak referansı varsa GC tarafından hemen toplanabilir.
 SoftReference: Bellek düşükse toplanır, genelde cache için kullanılır.
 
-
-<!-- WeakReference<MyObject> weakRef = new WeakReference<>(new MyObject());
-SoftReference<MyObject> softRef = new SoftReference<>(new MyObject()); -->
+```
+ WeakReference<MyObject> weakRef = new WeakReference<>(new MyObject());
+SoftReference<MyObject> softRef = new SoftReference<>(new MyObject());
+```
 
 - Proje Pratiği:
 Cache, memory-sensitive uygulamalarda soft ve weak referanslar tercih edilir. Doğru referans tipinin seçilmesi bellek sızıntılarını önler.
@@ -155,12 +163,13 @@ CompletableFuture, asenkron ve event-driven programlamada kullanılabilen Future
 
 - Detaylı Açıklama:
 Bir işlemi arka planda başlatır ve tamamlandığında sonuçla işlem yapmayı sağlar. Zincirleme, hata yönetimi ve paralel çalıştırma gibi yetenekleri vardır.
-
+```
 CompletableFuture.supplyAsync(() -> {
     return "Sonuç";
 }).thenAccept(result -> {
     System.out.println("İşlem sonucu: " + result);
 });
+```
 - Proje Pratiği:
 Asenkron I/O, web servis çağrıları, paralel veri işleme için uygundur. Callback hell’i önler.
 
@@ -173,14 +182,17 @@ ExecutorService: Thread havuzlarını ve task yönetimini soyutlar.
 - Detaylı Açıklama:
 Runnable iş yapısını belirtir, Thread bunu çalıştırır. ExecutorService thread oluşturma ve yönetimini kolaylaştırır.
 
-<!-- Runnable task = () -> System.out.println("Çalışıyor");
+```
+Runnable task = () -> System.out.println("Çalışıyor");
 Thread thread = new Thread(task);
 thread.start();
 
 // ExecutorService ile
 ExecutorService executor = Executors.newFixedThreadPool(2);
 executor.submit(task);
-executor.shutdown(); -->
+executor.shutdown();
+
+```
 
 - Proje Pratiği:
 
