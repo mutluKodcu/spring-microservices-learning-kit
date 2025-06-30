@@ -1,12 +1,12 @@
-Spring Microservices Learning Kit
-*********************************
+* Spring Microservices Learning Kit
+
 # Java & Java Core & Advanced
-------------------------
+
 Threading, Concurrency, Locks, ExecutorService
 Collections, Stream API, Lambda expressions
 Exception Handling, Immutability
 Design Patterns (Singleton, Factory, Builder, etc.)
-------------------------
+
 ## Thread ve Concurrency
 
 Thread: Java'da bir programın aynı anda birden çok iş yapmasını sağlar.
