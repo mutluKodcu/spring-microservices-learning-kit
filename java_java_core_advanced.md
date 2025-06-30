@@ -1,6 +1,4 @@
-# Spring Microservices Learning Kit
-
-## Java & Java Core & Advanced
+## 1. Java & Java Core & Advanced
 
 Threading, Concurrency, Locks, ExecutorService
 Collections, Stream API, Lambda expressions
